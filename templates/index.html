@@ -1,13 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibek Kunwar</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<body class="bg-slate-950">
+
+    <nav class="navbar fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-2xl font-bold text-white">Shadoow</h1>
+
+            <ul class="hidden md:flex space-x-8 text-white font-medium">
+                <li><a href="#home" class="nav-link hover:text-sky-400 transition">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-sky-400 transition">About</a></li>
+                <li><a href="#projects" class="nav-link hover:text-sky-400 transition">Projects</a></li>
+                <li><a href="#blogs" class="nav-link hover:text-sky-400 transition">Blogs</a></li>
+                <li><a href="#contact" class="nav-link hover:text-sky-400 transition">Contact</a></li>
+            </ul>
+
+            <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-slate-900 border-b border-slate-800 shadow-xl">
+            <ul class="flex flex-col px-6 py-4 space-y-4 font-medium text-white">
+                <li><a href="#home" class="block hover:text-sky-400">Home</a></li>
+                <li><a href="#about" class="block hover:text-sky-400">About</a></li>
+                <li><a href="#projects" class="block hover:text-sky-400">Projects</a></li>
+                <li><a href="#blogs" class="block hover:text-sky-400">Blogs</a></li>
+                <li><a href="#contact" class="block hover:text-sky-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero flex items-center min-h-screen text-white px-6 pt-20">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center w-full">
+
+            <div class="space-y-6 text-center md:text-left">
+                <h2 class="text-5xl md:text-6xl font-bold leading-tight">
+                    Hello, I'm <span class="text-sky-400">Dark Shadoow</span>
+                </h2>
+
+                <p class="text-xl text-gray-200">
+                    A passionate
+                    <span class="text-sky-400 font-semibold">Machine Learning Engineer</span>,
+                    <span class="text-sky-400 font-semibold">Frontend Developer</span>, and
+                    <span class="text-sky-400 font-semibold">Backend Developer</span>.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    I build dynamic, scalable, and fully mobile-responsive web applications
+                    with modern technologies and creative solutions.
+                </p>
+
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="{{ url_for('static', filename='cv/bibek cv.pdf') }}" download
+                        class="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-lg font-semibold transition">
+                        Download CV
+                    </a>
+
+                    <a href="#projects"
+                        class="border border-sky-400 hover:bg-sky-400 hover:text-black px-6 py-3 rounded-lg font-semibold transition">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Image"
+                    class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full border-4 border-sky-400 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-900 text-white px-6 scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    About <span class="text-sky-400">Me</span>
+                </h2>
+                <p class="text-gray-400 mt-4 text-lg">
+                    Get to know more about my education, experience, and journey
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="flex justify-center">
+                    <div
+                        class="w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-sky-400 shadow-2xl">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/1nodexUmC6w?si=a9x1U5e78F4JGgwm"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-sky-400">
+                        Full Stack Developer & Machine Learning Enthusiast
+                    </h3>
+
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Hello! I'm <span class="text-sky-400 font-semibold">Dark Shadoow</span>,
+                        a passionate developer focused on building modern, dynamic, and mobile-responsive web
+                        applications.
+                    </p>
+
+                    <div class="grid gap-4">
+                        <div class="bg-slate-800 p-5 rounded-xl shadow-lg hover:scale-105 transition">
+                            <h4 class="text-xl font-semibold text-sky-400">🎓 Education</h4>
+                            <p class="text-gray-300 mt-2">
+                                Completed <strong>BSc CSIT</strong> from <strong>Tribhuvan University (TU)</strong>.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-800 p-5 rounded-xl shadow-lg hover:scale-105 transition">
+                            <h4 class="text-xl font-semibold text-sky-400">💼 Experience</h4>
+                            <p class="text-gray-300 mt-2">
+                                Worked for more than <strong>2 years in the banking sector</strong>, gaining valuable
+                                professional and technical experience.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-800 p-5 rounded-xl shadow-lg hover:scale-105 transition">
+                            <h4 class="text-xl font-semibold text-sky-400">🤝 Social Work</h4>
+                            <p class="text-gray-300 mt-2">
+                                Active social worker with <strong>Lifeline Achham</strong>, contributing to community
+                                support and development initiatives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 scroll-mt-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white">My <span class="text-sky-400">Projects</span></h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            {% for project in projects %}
+            <div
+                class="flex-shrink-0 w-full sm:w-[320px] md:w-[350px] bg-slate-800/60 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:shadow-sky-500/20 transition-all duration-300 hover:-translate-y-2">
+
+                <div class="relative w-full aspect-video overflow-hidden">
+                    <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+
+                <div class="p-5 flex flex-col h-[280px]">
+                    <h3 class="text-sky-400 font-bold text-xl mb-3">
+                        {{ project.title }}
+                    </h3>
+
+                    <div class="flex-grow">
+                        <p class="text-gray-300 text-sm leading-relaxed description line-clamp-4">
+                            {{ project.description }}
+                        </p>
+
+                        {% if project.description|length > 120 %}
+                        <button class="read-more-btn text-sky-400 text-sm mt-2 hover:text-sky-300 transition">
+                            Read More
+                        </button>
+                        {% endif %}
+                    </div>
+
+                    <div class="mt-5 flex justify-center gap-3">
+                        {% if project.url %}
+                        <a href="{{ project.url }}" target="_blank"
+                            class="px-4 py-2 rounded-full bg-sky-500/20 text-sky-300 hover:bg-sky-500 hover:text-white transition">
+                            Live Demo
+                        </a>
+                        {% endif %}
+
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank"
+                            class="px-4 py-2 rounded-full bg-gray-700/40 text-gray-300 hover:bg-gray-600 hover:text-white transition">
+                            GitHub
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="blogs" class="py-24 relative w-full max-w-6xl mx-auto overflow-hidden px-4 scroll-mt-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white">My <span class="text-sky-400">Blogs</span></h2>
+        </div>
+
+        <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+            <div class="card w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="images/blog1.jpg" class="w-full h-48 object-cover" alt="Machine Learning">
+                    <div class="p-4 text-white">
+                        <h3 class="text-lg font-bold text-sky-400">Machine Learning</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="images/blog2.jpg" class="w-full h-48 object-cover" alt="Frontend Tips">
+                    <div class="p-4 text-white">
+                        <h3 class="text-lg font-bold text-sky-400">Frontend Tips</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="images/blog3.jpg" class="w-full h-48 object-cover" alt="Backend Dev">
+                    <div class="p-4 text-white">
+                        <h3 class="text-lg font-bold text-sky-400">Backend Dev</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="images/blog1.jpg" class="w-full h-48 object-cover" alt="DevOps">
+                    <div class="p-4 text-white">
+                        <h3 class="text-lg font-bold text-sky-400">DevOps</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="images/blog2.jpg" class="w-full h-48 object-cover" alt="UI/UX">
+                    <div class="p-4 text-white">
+                        <h3 class="text-lg font-bold text-sky-400">UI/UX</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="prevSlide()" aria-label="Previous Slide"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full z-10 transition">
+            ❮
+        </button>
+
+        <button onclick="nextSlide()" aria-label="Next Slide"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full z-10 transition">
+            ❯
+        </button>
+    </section>
+
+    <section id="contact" class="min-h-screen flex items-center justify-center p-6 scroll-mt-20">
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <div class="bg-slate-900 rounded-2xl p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-sky-400 mb-6">Connect With Me</h2>
+                    <p class="text-gray-300 mb-8">
+                        Feel free to connect with me on social platforms or send a message.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-sky-400 font-semibold">LinkedIn</span>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-white font-semibold">GitHub</span>
+                    </a>
+
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-gray-200 font-semibold">X (Twitter)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-sky-400 mb-6">Contact Me</h2>
+
+                <form class="space-y-5">
+                    <div>
+                        <label class="text-sm text-gray-300">Name</label>
+                        <input type="text" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+
+                    <div>
+                        <label class="text-sm text-gray-300">Email</label>
+                        <input type="email" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+
+                    <div>
+                        <label class="text-sm text-gray-300">Message</label>
+                        <textarea rows="5" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-sky-500 hover:bg-sky-600 transition p-3 rounded-xl font-semibold text-white">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-10">
+        <div class="max-w-6xl mx-auto px-6 text-center text-gray-400 text-sm">
+            © Copyright 2026 - Developed by <span class="text-sky-400 font-semibold">Shadoow</span>. All rights
+            reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* =========================
+               MOBILE MENU
+            ========================== */
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll("a");
+                mobileLinks.forEach(link => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                    });
+                });
+            }
+
+            /* =========================
+               BLOG SLIDER
+            ========================== */
+            let index = 0;
+            const slider = document.getElementById("slider");
+            const cards = document.querySelectorAll(".card");
+
+            function getVisibleCards() {
+                if (window.innerWidth < 640) return 1;      // Mobile
+                if (window.innerWidth < 1024) return 2;     // Tablet
+                return 3;                                   // Desktop
+            }
+
+            function updateSlider() {
+                if (!slider || cards.length === 0) return;
+                const visibleCards = getVisibleCards();
+                const cardWidth = 100 / visibleCards;
+                slider.style.transform = `translateX(-${index * cardWidth}%)`;
+            }
+
+            window.nextSlide = function () {
+                const visibleCards = getVisibleCards();
+                if (index < cards.length - visibleCards) {
+                    index++;
+                    updateSlider();
+                }
+            };
+
+            window.prevSlide = function () {
+                if (index > 0) {
+                    index--;
+                    updateSlider();
+                }
+            };
+
+            window.addEventListener("resize", () => {
+                index = 0;
+                updateSlider();
+            });
+
+            updateSlider();
+
+            /* =========================
+               READ MORE / READ LESS
+            ========================== */
+            document.querySelectorAll(".read-more-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    const description = button.parentElement.querySelector(".description");
+                    if (!description) return;
+
+                    description.classList.toggle("line-clamp-4");
+
+                    if (description.classList.contains("line-clamp-4")) {
+                        button.textContent = "Read More";
+                    } else {
+                        button.textContent = "Read Less";
+                    }
+                });
+            });
+
+        });
+    </script>
 
 </body>
 

@@ -1,0 +1,74 @@
+/* Whole Website Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #38bdf8;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    background: rgba(15, 23, 42, 0.95);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.mobile-menu a {
+    padding: 12px;
+    color: white;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    background: #1e293b;
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #38bdf8);
+}
+
+.test {
+    color: red;
+    font-size: large;
+}
