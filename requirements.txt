@@ -1,8 +1,7 @@
 Flask
-Flask-MySQLdb
+gunicorn
 Flask-Cors
 python-dotenv
-mysql-connector-python
 python-dotenv
 flask-sqlalchemy
 pymysql
