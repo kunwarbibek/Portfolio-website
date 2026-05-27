@@ -161,12 +161,16 @@
 
 
 
-    <!--BLOG dashboard  start-->
+
+
+
+
+    <!-- ================= BLOG SECTION ================= -->
 
     <div class="max-w-6xl mx-auto">
 
         <h1 class="text-3xl font-bold text-center text-sky-600 mb-8">
-            Project Dashboard
+            🚀 CRUD blog Dashboard
         </h1>
 
         <!-- Flash Messages -->
@@ -181,30 +185,32 @@
         {% endif %}
         {% endwith %}
 
-        <!-- ADD BLOG FORM -->
+        <!-- ADD blog FORM -->
         <div class="bg-white p-6 rounded-2xl shadow mb-10">
-            <h2 class="text-xl font-bold mb-4">Add Blog</h2>
+            <h2 class="text-xl font-bold mb-4">➕ Add blog</h2>
 
             <form action="/blog/add" method="POST" enctype="multipart/form-data" class="grid gap-3">
 
-                <input type="text" name="title" placeholder="Blog Title" required
+                <input type="text" name="title" placeholder="blog Title" required
                     class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400">
 
                 <textarea name="description" placeholder="Description" required
                     class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
 
+                <input type="url" name="github_url" placeholder="GitHub URL"
+                    class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400">
 
                 <input type="file" name="image" accept="image/*" class="p-3 border rounded-xl">
 
                 <button type="submit"
                     class="bg-sky-500 text-white py-3 rounded-xl font-semibold hover:bg-sky-600 transition-colors">
-                    Add Blog
+                    Add blog
                 </button>
 
             </form>
         </div>
 
-        <!-- BLOG LIST -->
+        <!-- blog LIST -->
         <div class="grid md:grid-cols-2 gap-6">
 
             {% for blog in blogs %}
@@ -232,7 +238,15 @@
                         {{ blog.description }}
                     </p>
 
-
+                    <!-- GITHUB -->
+                    <div class="flex gap-3 mt-3 text-sm font-medium">
+                        {% if blog.github_url %}
+                        <a href="{{ blog.github_url }}" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-600 hover:underline">
+                            GitHub
+                        </a>
+                        {% endif %}
+                    </div>
 
                 </div>
 
@@ -265,6 +279,9 @@
                             <textarea name="description" required
                                 class="p-2 border rounded-xl">{{ blog.description }}</textarea>
 
+                            <input type="url" name="github_url" value="{{ blog.github_url }}"
+                                class="p-2 border rounded-xl">
+
                             <input type="file" name="image" accept="image/*" class="p-2 border rounded-xl">
 
                             <button type="submit"
@@ -289,7 +306,6 @@
         </div>
 
     </div>
-
 
     <!--BLOG dashboard  end-->
 
