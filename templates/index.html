@@ -21,7 +21,6 @@
     <meta property="og:image" content="https://yourdomain.com/static/images/preview.png" />
     <meta property="og:url" content="https://yourdomain.com/" />
     <meta property="og:site_name" content="Bibek Kunwar Portfolio" />
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -58,12 +57,12 @@
         </div>
     </nav>
 
-    <section id="home" class="py-10 relative w-full max-w-6xl mx-auto overflow-hidden px-4 scroll-mt-20">
+    <section id="home" class="hero flex items-center min-h-screen text-white px-6 pt-20">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center w-full">
 
             <div class="space-y-6 text-center md:text-left">
                 <h2 class="text-5xl md:text-6xl font-bold leading-tight">
-                    Hello, I'm <span class="text-sky-400">Dark Shadoow</span>
+                    Hello, I'm <span class="text-sky-400">Bibek</span>
                 </h2>
 
                 <p class="text-xl text-gray-200">
@@ -98,7 +97,7 @@
         </div>
     </section>
 
-    <section id="about" class="py-10 bg-slate-900 text-white px-6 scroll-mt-20">
+    <section id="about" class="py-24 bg-slate-900 text-white px-6 scroll-mt-20">
         <div class="max-w-7xl mx-auto">
 
             <div class="text-center mb-16">
@@ -292,202 +291,212 @@
             {% endfor %}
 
         </div>
-        <!--Blogs end here-->
 
-        <!--Contact section-->
+        <!-- NAV BUTTONS -->
+        <button onclick="prevSlide()" aria-label="Previous Slide"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full z-10 transition">
+            ❮
+        </button>
 
-        <section id="contact" class="min-h-screen flex items-center justify-center p-6 scroll-mt-20">
-            <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <button onclick="nextSlide()" aria-label="Next Slide"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full z-10 transition">
+            ❯
+        </button>
+    </section>
+    <!--Blogs end here-->
 
-                <div class="bg-slate-900 rounded-2xl p-8 shadow-xl flex flex-col justify-between">
+    <!--Contact section-->
+
+    <section id="contact" class="min-h-screen flex items-center justify-center p-6 scroll-mt-20">
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <div class="bg-slate-900 rounded-2xl p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-sky-400 mb-6">Connect With Me</h2>
+                    <p class="text-gray-300 mb-8">
+                        Feel free to connect with me on social platforms or send a message.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="https://www.linkedin.com/in/bibek-kunwar-50112131a/" target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-sky-400 font-semibold">LinkedIn</span>
+                    </a>
+
+                    <a href="https://github.com/kunwarbibek" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-white font-semibold">GitHub</span>
+                    </a>
+
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
+                        <span class="text-gray-200 font-semibold">X (Twitter)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-sky-400 mb-6">Contact Me</h2>
+
+                <form class="space-y-5">
                     <div>
-                        <h2 class="text-3xl font-bold text-sky-400 mb-6">Connect With Me</h2>
-                        <p class="text-gray-300 mb-8">
-                            Feel free to connect with me on social platforms or send a message.
-                        </p>
+                        <label class="text-sm text-gray-300">Name</label>
+                        <input type="text" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
                     </div>
 
-                    <div class="space-y-4">
-                        <a href="https://www.linkedin.com/in/bibek-kunwar-50112131a/" target="_blank"
-                            rel="noopener noreferrer"
-                            class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
-                            <span class="text-sky-400 font-semibold">LinkedIn</span>
-                        </a>
-
-                        <a href="https://github.com/kunwarbibek" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
-                            <span class="text-white font-semibold">GitHub</span>
-                        </a>
-
-                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-4 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-xl">
-                            <span class="text-gray-200 font-semibold">X (Twitter)</span>
-                        </a>
+                    <div>
+                        <label class="text-sm text-gray-300">Email</label>
+                        <input type="email" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
                     </div>
-                </div>
 
-                <div class="bg-slate-900 rounded-2xl p-8 shadow-xl">
-                    <h2 class="text-3xl font-bold text-sky-400 mb-6">Contact Me</h2>
+                    <div>
+                        <label class="text-sm text-gray-300">Message</label>
+                        <textarea rows="5" required
+                            class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                    </div>
 
-                    <form class="space-y-5">
-                        <div>
-                            <label class="text-sm text-gray-300">Name</label>
-                            <input type="text" required
-                                class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
-                        </div>
-
-                        <div>
-                            <label class="text-sm text-gray-300">Email</label>
-                            <input type="email" required
-                                class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500">
-                        </div>
-
-                        <div>
-                            <label class="text-sm text-gray-300">Message</label>
-                            <textarea rows="5" required
-                                class="w-full mt-1 p-3 rounded-xl bg-slate-800 text-white outline-none focus:ring-2 focus:ring-sky-500"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full bg-sky-500 hover:bg-sky-600 transition p-3 rounded-xl font-semibold text-white">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-
+                    <button type="submit"
+                        class="w-full bg-sky-500 hover:bg-sky-600 transition p-3 rounded-xl font-semibold text-white">
+                        Send Message
+                    </button>
+                </form>
             </div>
-        </section>
+
+        </div>
+    </section>
 
 
-        <!--Contact section end-->
+    <!--Contact section end-->
 
 
-        <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-10">
-            <div class="max-w-6xl mx-auto px-6 text-center text-gray-400 text-sm">
-                © Copyright 2026 - Developed by <span class="text-sky-400 font-semibold">Shadoow</span>. All rights
-                reserved.
-            </div>
-        </footer>
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-10">
+        <div class="max-w-6xl mx-auto px-6 text-center text-gray-400 text-sm">
+            © Copyright 2026 - Developed by <span class="text-sky-400 font-semibold">Shadoow</span>. All rights
+            reserved.
+        </div>
+    </footer>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-                /* =========================
-                   MOBILE MENU
-                ========================== */
-                const menuBtn = document.getElementById("menu-btn");
-                const mobileMenu = document.getElementById("mobile-menu");
+            /* =========================
+               MOBILE MENU
+            ========================== */
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-                if (menuBtn && mobileMenu) {
-                    menuBtn.addEventListener("click", () => {
-                        mobileMenu.classList.toggle("hidden");
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll("a");
+                mobileLinks.forEach(link => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
                     });
+                });
+            }
 
-                    const mobileLinks = mobileMenu.querySelectorAll("a");
-                    mobileLinks.forEach(link => {
-                        link.addEventListener("click", () => {
-                            mobileMenu.classList.add("hidden");
-                        });
-                    });
-                }
+            /* =========================
+               BLOG SLIDER
+            ========================== */
+            let index = 0;
+            const slider = document.getElementById("slider");
+            const cards = document.querySelectorAll(".card");
 
-                /* =========================
-                   BLOG SLIDER
-                ========================== */
-                let index = 0;
-                const slider = document.getElementById("slider");
-                const cards = document.querySelectorAll(".card");
+            function getVisibleCards() {
+                if (window.innerWidth < 640) return 1;      // Mobile
+                if (window.innerWidth < 1024) return 2;     // Tablet
+                return 3;                                   // Desktop
+            }
 
-                function getVisibleCards() {
-                    if (window.innerWidth < 640) return 1;      // Mobile
-                    if (window.innerWidth < 1024) return 2;     // Tablet
-                    return 3;                                   // Desktop
-                }
+            function updateSlider() {
+                if (!slider || cards.length === 0) return;
+                const visibleCards = getVisibleCards();
+                const cardWidth = 100 / visibleCards;
+                slider.style.transform = `translateX(-${index * cardWidth}%)`;
+            }
 
-                function updateSlider() {
-                    if (!slider || cards.length === 0) return;
-                    const visibleCards = getVisibleCards();
-                    const cardWidth = 100 / visibleCards;
-                    slider.style.transform = `translateX(-${index * cardWidth}%)`;
-                }
-
-                window.nextSlide = function () {
-                    const visibleCards = getVisibleCards();
-                    if (index < cards.length - visibleCards) {
-                        index++;
-                        updateSlider();
-                    }
-                };
-
-                window.prevSlide = function () {
-                    if (index > 0) {
-                        index--;
-                        updateSlider();
-                    }
-                };
-
-                window.addEventListener("resize", () => {
-                    index = 0;
+            window.nextSlide = function () {
+                const visibleCards = getVisibleCards();
+                if (index < cards.length - visibleCards) {
+                    index++;
                     updateSlider();
-                });
+                }
+            };
 
+            window.prevSlide = function () {
+                if (index > 0) {
+                    index--;
+                    updateSlider();
+                }
+            };
+
+            window.addEventListener("resize", () => {
+                index = 0;
                 updateSlider();
-
-                /* =========================
-                   READ MORE / READ LESS
-                ========================== */
-                document.querySelectorAll(".read-more-btn").forEach(button => {
-                    button.addEventListener("click", () => {
-                        const description = button.parentElement.querySelector(".description");
-                        if (!description) return;
-
-                        description.classList.toggle("line-clamp-4");
-
-                        if (description.classList.contains("line-clamp-4")) {
-                            button.textContent = "Read More";
-                        } else {
-                            button.textContent = "Read Less";
-                        }
-                    });
-                });
-
             });
 
+            updateSlider();
 
+            /* =========================
+               READ MORE / READ LESS
+            ========================== */
+            document.querySelectorAll(".read-more-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    const description = button.parentElement.querySelector(".description");
+                    if (!description) return;
 
-            const container = document.getElementById("projectsContainer");
+                    description.classList.toggle("line-clamp-4");
 
-            function scrollProjects(direction) {
-                const scrollAmount = 380; // card width + gap
-                container.scrollBy({
-                    left: direction * scrollAmount,
-                    behavior: "smooth"
+                    if (description.classList.contains("line-clamp-4")) {
+                        button.textContent = "Read More";
+                    } else {
+                        button.textContent = "Read Less";
+                    }
                 });
+            });
+
+        });
+
+
+
+        const container = document.getElementById("projectsContainer");
+
+        function scrollProjects(direction) {
+            const scrollAmount = 380; // card width + gap
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        // Optional: enable horizontal scroll behavior without changing classes
+        container.style.display = "flex";
+        container.style.flexWrap = "nowrap";
+        container.style.overflowX = "auto";
+        container.style.scrollBehavior = "smooth";
+        container.style.scrollbarWidth = "none";
+
+
+
+        function toggleText(button) {
+            const fullText = button.nextElementSibling;
+
+            if (fullText.classList.contains('hidden')) {
+                fullText.classList.remove('hidden');
+                button.innerText = 'Read Less';
+            } else {
+                fullText.classList.add('hidden');
+                button.innerText = 'Read More';
             }
-
-            // Optional: enable horizontal scroll behavior without changing classes
-            container.style.display = "flex";
-            container.style.flexWrap = "nowrap";
-            container.style.overflowX = "auto";
-            container.style.scrollBehavior = "smooth";
-            container.style.scrollbarWidth = "none";
-
-
-
-            function toggleText(button) {
-                const fullText = button.nextElementSibling;
-
-                if (fullText.classList.contains('hidden')) {
-                    fullText.classList.remove('hidden');
-                    button.innerText = 'Read Less';
-                } else {
-                    fullText.classList.add('hidden');
-                    button.innerText = 'Read More';
-                }
-            }
-        </script>
-
-
+        }
+    </script>
 
 </body>
 
